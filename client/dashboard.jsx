@@ -18,10 +18,10 @@ export default class Home extends Component {
       this.setState({ audioFile: reader.result });
     }.bind(this);
   }
-
+  
   render() {
     return (
-      <div>
+      <div className='transport'>
       <Recorder onStop={this.onStop} command={this.state.command}/>
       <button onClick={() => this.setState({ command: 'start' })}>Start</button>
       <button onClick={() => this.setState({ command: 'stop' })} >Stop</button>
