@@ -21,6 +21,17 @@ export default class Dashboard extends Component {
           })
         }
         <button onClick={() => playAllTracks(this.tracks, this.ctx)}> Play All</button>
+        <div className='transport'>
+        <button onClick={() => this.setState({ command: 'start' })}>Start</button>
+        <button onClick={() => this.setState({ command: 'stop' })} >Stop</button>
+        <button>Play</button>
+        {
+          this.state.audioFile ?
+            (
+              <audio controls="controls" src={this.state.audioFile} />
+            ) : ''
+        }
+        </div>
       </div>
     );
   }
